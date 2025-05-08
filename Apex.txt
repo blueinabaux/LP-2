@@ -1,0 +1,186 @@
+ 
+public class ArrayAddition {
+    public static void addArrays(List<Integer> a, List<Integer> b) {
+        List<Integer> result = new List<Integer>();
+        Integer n = Math.min(a.size(), b.size());
+        for (Integer i = 0; i < n; i++) {
+            result.add(a[i] + b[i]);
+        }
+        System.debug('Array Sum: ' + result);
+    }
+
+}
+
+
+public class TempConverter {
+    public static Double convert(double a){
+        return (a*9/5)+32;
+    }
+}
+
+Geomerty Area:
+public class GeometryArea {
+    public static void calculateArea(Decimal radius, Decimal length, Decimal breadth) {
+        Decimal circle = Math.PI * radius * radius;
+        Decimal rectangle = length * breadth;
+        Decimal square = length * length;
+        
+        System.debug('Circle: ' + circle + ', Rectangle: ' + rectangle + ', Square: ' + square);
+    }
+
+}
+
+
+
+
+
+public class CurrencyConversion {
+    public static void convertCurrency(Decimal amount, Decimal rate) {
+        Decimal converted = amount * rate;
+        System.debug('Converted Amount: ' + converted);
+    }
+
+}
+
+
+
+
+public class InterestCalculator {
+    public static void calculateInterest(Decimal p, Decimal r, Integer t) {
+        
+        // Simple Interest
+        Decimal si = (p * r * t) / 100;
+        
+        Double principal = (Double)p;
+        Double rate = (Double)(r/100);
+        Double amount = principal * Math.pow(1 + rate, t);
+        
+        // Compound Interest = Amount - Principal
+        Decimal ci = (Decimal)(amount - principal);
+        
+        System.debug('Simple Interest: ' + si + ' Compound Interest: ' + ci);
+        
+    }
+
+}
+
+
+public class PrimeChecker {
+    public static void isPrime(Integer n) {
+        Boolean isPrime = true;
+        
+        if(n < 2) {
+            isPrime = false;
+        }
+        else {
+            Integer sqrtN = (Integer)Math.floor(Math.sqrt(n));
+            for(Integer i = 2 ; i < sqrtN ; i++) {
+                if(Math.mod(n, i) == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        
+        System.debug(n + ' is Prime ? ' + isPrime);
+    }
+
+}
+
+public class FibonacciSeries {
+    public static void generateFibonacci(Integer terms) {
+        Integer a = 0 , b = 1;
+        List<Integer> series = new List<Integer>{a, b};
+            for (Integer i = 2 ; i < terms ; i++) {
+                Integer next = a + b;
+                series.add(next);
+                a = b;
+                b = next;
+            }
+        
+        System.debug('Fibonacci Series: ' + series);
+    }
+
+}
+
+
+public class MatrixAddition {
+    
+    public static void addMatrix(List<List<Integer>> A, List<List<Integer>> B) {
+        List<List<Integer>> result = new List<List<Integer>>();
+        for (Integer i = 0 ; i < A.size() ; i++) {
+            List<Integer> row = new List<Integer>();
+            for(Integer j = 0 ; j < A[i].size() ; j++) {
+                row.add(A[i][j] + B[i][j]);
+            }
+            result.add(row);
+        }
+        
+        System.debug('Matrix Sum: ' + result);
+    }
+
+}
+
+
+
+public class ScientificCalculator {
+    
+    public static Decimal add(Decimal a, Decimal b) {
+        return a + b;
+    }
+    public static Decimal subtract(Decimal a, Decimal b) {
+        return a - b;
+    }
+    public static Decimal multiply(Decimal a, Decimal b) {
+        return a * b;
+    }
+    public static String division(Decimal a, Decimal b) {
+        return b != 0 ? String.valueOf(a / b) : 'Undefined (division by zero)';
+    }
+    public static Double power(Double a, Double b) {
+        return Math.pow(a, b);
+    }
+    public static Double sqrt(Double a) {
+        return Math.sqrt(a);
+    }
+    public static Double sin(Double degrees) {
+        return Math.sin(degrees * Math.PI / 180);
+    }
+    public static Double cos(Double degrees) {
+        return Math.cos(degrees * Math.PI / 180);
+    }
+    public static Double tan(Double degrees) {
+        return Math.tan(degrees * Math.PI / 180);
+    }
+    public static Double log(Double a) {
+        return Math.log(a);
+    }
+    
+
+}
+
+
+
+public class MatrixMultiplication {
+    
+    public static void multiplyMatrix(List<List<Integer>> A, List<List<Integer>> B) {
+        Integer m = A.size(), n = B[0].size(), p = A[0].size();
+        List<List<Integer>> result = new List<List<Integer>>();
+        
+        for (Integer i = 0 ; i < m ; i++) {
+            List<Integer> row = new List<Integer>();
+            for (Integer j = 0 ; j < n ; j++) {
+            	Integer sum = 0;
+                for (Integer k = 0 ; k < p ; k++) {
+                    sum += A[i][k] * B[k][j];  
+                }
+                row.add(sum);
+            
+        	}
+            result.add(row);
+        }
+        
+        System.debug('Matrix Product: ' + result);
+    }
+
+}
